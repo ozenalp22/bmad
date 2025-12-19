@@ -8,6 +8,9 @@
 
 ---
 
+<div style="background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%); border-left: 5px solid #1976d2; padding: 25px; margin: 25px 0; border-radius: 10px; box-shadow: 0 4px 12px rgba(25, 118, 210, 0.15); position: relative;">
+<div style="position: absolute; top: 15px; right: 15px; font-size: 24px;">✨</div>
+
 <div align="center">
 
 ## 🔀 Fork Notice: BMAD + Beads Integration
@@ -89,6 +92,8 @@ The completely revamped **BMAD V6 installer** now includes built-in support for 
 - [**Installation Guide**](./docs/custom-content-installation.md) - Learn to create and install custom content
 - [**Detail Content Docs**](./src/modules/bmb/docs/README.md) - Reference details for agents, modules, workflows and the bmad builder
 - [**2 Very simple Custom Modules of questionable quality**](./docs/sample-custom-modules/README.md) - if you want to download and try to install a custom shared module, get an idea of how to bundle and share your own, or create your own personal agents, workflows and modules.
+
+</div>
 
 </div>
 
