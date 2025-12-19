@@ -1,6 +1,6 @@
 # BMad Method & BMad Core (with Beads integration)
 
-**Repository:** [ozenalp22/bmad-with-beads](https://github.com/ozenalp22/bmad-with-beads)
+**Repository:** [ozenalp22/bmad-withbeads](https://github.com/ozenalp22/bmad-withbeads)
 
 [![Stable Version](https://img.shields.io/npm/v/bmad-method?color=blue&label=stable)](https://www.npmjs.com/package/bmad-method)
 [![Alpha Version](https://img.shields.io/npm/v/bmad-method/alpha?color=orange&label=alpha)](https://www.npmjs.com/package/bmad-method)
