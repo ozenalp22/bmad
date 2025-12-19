@@ -438,6 +438,9 @@ async function main() {
   const migrator = new BeadsMigrator({ dryRun, verbose });
   const result = await migrator.migrate();
 
+  if (!result.success) {
+    console.error('Migration failed:', result.error || 'Unknown error');
+  }
   process.exit(result.success ? 0 : 1);
 }
 

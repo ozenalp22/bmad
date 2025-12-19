@@ -39,11 +39,13 @@ BMAD Method is powerful for AI-driven development, but its task tracking relied 
 
 ### What Changed?
 
-- **Beads is now mandatory** — BMAD workflows require `bd` CLI to function
-- **Installer provisions Beads** — `npm install @beads/bd` runs automatically during setup
+- **Beads is mandatory** — BMAD core workflows require `bd` CLI to function. The installer provisions Beads unconditionally and will fail if provisioning is unsuccessful.
+- **bmad-beads module is required** — The bmad-beads module is automatically selected and cannot be deselected during installation. It provides essential agents and workflows for Beads integration.
+- **Always provisioned** — `npm install @beads/bd` runs automatically during every BMAD installation (not conditional on module selection)
 - **Source of truth shifted** — Task status lives in Beads, not markdown checkboxes
 - **Agents updated** — SM, Dev, and Quick Flow agents use Beads for work discovery
 - **New conventions** — See `_bmad/bmm/data/beads-conventions.md` after installation
+- **Workflow guards** — Core implementation workflows (dev-story, create-story, code-review) include preflight checks and will halt if Beads is unavailable
 
 ### Quick Start (This Fork)
 

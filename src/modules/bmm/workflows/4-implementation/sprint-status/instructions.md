@@ -65,12 +65,28 @@ Run BMAD installer to provision Beads, then run `/bmad:bmm:workflows:sprint-plan
     <action>Parse Beads JSON output to extract:</action>
     - Epics: issues with type=epic
     - Stories: issues with label "bmad:story"
-    - Status from `bmad:stage:*` labels:
-      - `bmad:stage:backlog` → backlog
-      - `bmad:stage:ready-for-dev` → ready-for-dev
-      - `bmad:stage:in-progress` → in-progress
-      - `bmad:stage:review` → review
-      - `bmad:stage:done` or status=closed → done
+    - Status from `bmad:stage:*` labels with robust parsing:
+    
+    **Stage parsing logic (with safeguards):**
+    
+    1. **Extract all stage labels**: Filter labels array for entries matching pattern `bmad:stage:<stage-name>`
+    2. **Validate label syntax**: Each label must match regex `^bmad:stage:(backlog|ready-for-dev|in-progress|review|done)$`
+       - Invalid formats (e.g., `bmad:stage:invalid`, `bmad:stage`, `stage:backlog`, typos) are treated as missing
+       - Log warning: "⚠️ Invalid stage label format detected: '{{invalid_label}}' on issue {{issue_id}} - treating as missing"
+    3. **Handle multiple stage labels**: If multiple valid `bmad:stage:*` labels exist, resolve by choosing the most advanced stage according to ordering:
+       - Stage ordering (least → most advanced): backlog < ready-for-dev < in-progress < review < done
+       - Log warning: "⚠️ Multiple stage labels detected on issue {{issue_id}}: {{labels}}. Using most advanced: {{selected_stage}}"
+    4. **Handle missing stage labels**: If no valid `bmad:stage:*` label found:
+       - Default to `backlog` status
+       - Log warning: "⚠️ No valid stage label found on issue {{issue_id}} - defaulting to backlog"
+       - Exception: If issue status=closed, treat as `done` regardless of labels
+    5. **Final status mapping**:
+       - `bmad:stage:backlog` → backlog
+       - `bmad:stage:ready-for-dev` → ready-for-dev
+       - `bmad:stage:in-progress` → in-progress
+       - `bmad:stage:review` → review
+       - `bmad:stage:done` or status=closed → done
+    
     <action>Count story statuses: backlog, ready-for-dev, in-progress, review, done</action>
     <action>Count epic statuses: backlog, in-progress, done</action>
     <action>Retrospectives: check sprint-status.yaml if exists, otherwise assume optional</action>

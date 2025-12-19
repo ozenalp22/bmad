@@ -141,7 +141,16 @@ class BeadsProvisioner {
       },
     };
 
-    await fs.writeJson(path.join(toolsDir, 'package.json'), packageJson, { spaces: 2 });
+    try {
+      await fs.writeJson(path.join(toolsDir, 'package.json'), packageJson, { spaces: 2 });
+    } catch (error) {
+      return {
+        success: false,
+        path: null,
+        version: null,
+        error: `Failed to write package.json: ${error.message}`,
+      };
+    }
 
     // Run npm install
     onProgress('Installing @beads/bd (this may take a moment)...');

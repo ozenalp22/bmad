@@ -75,5 +75,5 @@ agent:
       description: "Update MD status from beads"
 
     - trigger: migrate-stories
-      workflow: "../../../workflows/init-beads-from-stories/workflow.md"
+      workflow: "../workflows/init-beads-from-stories/workflow.md"
       description: "Bulk migrate all stories to beads"

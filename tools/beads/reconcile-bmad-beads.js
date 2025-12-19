@@ -376,9 +376,9 @@ async function main() {
 
   const reconciler = new BeadsReconciler({ fix, verbose });
   const result = await reconciler.reconcile();
-
   // Exit with error if discrepancies found and not fixed
   if (result.discrepancies && result.discrepancies.length > 0 && !fix) {
+    console.error(`Found ${result.discrepancies.length} discrepancies. Run with --fix to resolve.`);
     process.exit(1);
   }
 
