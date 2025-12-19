@@ -1,5 +1,7 @@
 # BMad Method & BMad Core (with Beads integration)
 
+**Repository:** [ozenalp22/bmad-with-beads](https://github.com/ozenalp22/bmad-with-beads)
+
 [![Stable Version](https://img.shields.io/npm/v/bmad-method?color=blue&label=stable)](https://www.npmjs.com/package/bmad-method)
 [![Alpha Version](https://img.shields.io/npm/v/bmad-method/alpha?color=orange&label=alpha)](https://www.npmjs.com/package/bmad-method)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -62,6 +64,17 @@
 > - **[Beads GitHub](https://github.com/steveyegge/beads)** — Full documentation for the `bd` CLI
 > - **[Integration Details](./docs/beads-integration/20251219-beads-integration-results.md)** — Complete technical documentation
 > - **[Beads Conventions](./src/modules/bmm/data/beads-conventions.md)** — Labels, hierarchy, and workflow rules
+>
+> ### Inspiration
+>
+> This integration was inspired by the comprehensive research in **[BMad + Beads Integration Research](https://gist.github.com/k9ert/fae9ca47568bf8f64310565db0e4f579)**, which explored the complementary nature of BMad's structured methodology and Beads' persistent task tracking capabilities.
+>
+> ### Development & Quality Assurance
+>
+> **Primary Integration:** Conducted by GPT 5.2 High  
+> **Code Review & Validation:** Opus 4.5, Grok 4.1, and Gemini 3.0 Pro  
+> **Automated Code Quality:** CodeRabbit  
+> **Security Analysis:** Snyk
 >
 > ---
 >
